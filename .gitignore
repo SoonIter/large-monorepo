@@ -45,3 +45,7 @@ Thumbs.db
 
 .turbo
 turbo-build.log
+
+# moon
+.moon/cache
+.moon/docker
