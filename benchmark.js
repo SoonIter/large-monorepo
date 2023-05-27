@@ -31,14 +31,14 @@ function spawnSync(cmd, args) {
 }
 
 message('prepping moon');
-spawnSync('moon', ['run', ':build', `--concurrency=3`]);
+spawnSync('moon', ['run', ':build', `--concurrency`, `3`]);
 
 message(`running turbo ${NUMBER_OF_RUNS} times`);
 let moonTime = 0;
 for (let i = 0; i < NUMBER_OF_RUNS; ++i) {
   cleanFolders();
   const b = new Date();
-  spawnSync('moon', ['run', ':build', `--concurrency 10`]);
+  spawnSync('moon', ['run', ':build']);
   const a = new Date();
   moonTime += a.getTime() - b.getTime();
   console.log(`The command ran in ${a.getTime() - b.getTime()}ms`);
